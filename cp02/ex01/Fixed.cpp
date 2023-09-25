@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:33:46 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 00:32:08 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 00:36:04 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed(int const n) : value(n << this->fractionalBits)
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(float const n) : value(std::roundf(n * (1 << this->fractionalBits)))
+Fixed::Fixed(float const n) : value(Fixed::round_float(n * (1 << this->fractionalBits)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }

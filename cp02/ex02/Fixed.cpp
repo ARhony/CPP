@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:33:46 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/25 18:11:17 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 00:39:10 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,11 @@
 
 Fixed::Fixed() : value(0) {}
 
-Fixed::Fixed(int const value)
-{
-	this->value = value << this->fractionalBits;
-}
+Fixed::Fixed(int const n) : value(n << this->fractionalBits) {}
 
-Fixed::Fixed(float const value)
-{
-	this->value = roundf(value * (1 << this->fractionalBits));
-}
+Fixed::Fixed(float const n) : value(round_float(n * (1 << this->fractionalBits))) {}
 
-Fixed::Fixed(Fixed const &fixed)
-{
-	this->value = fixed.getRawBits();
-}
+Fixed::Fixed(Fixed const &fixed) : value(fixed.getRawBits()) {}
 
 int	Fixed::toInt(void) const
 {
@@ -181,6 +172,11 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	this->value = raw;
+}
+
+float Fixed::round_float(float n)
+{
+	return (n >= 0) ? std::floor(n + 0.5) : std::ceil(n - 0.5);
 }
 
 Fixed::~Fixed()
