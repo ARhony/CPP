@@ -6,11 +6,12 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:34:29 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 00:39:13 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 00:42:13 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
