@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:33:46 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 00:25:24 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 00:32:08 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ int	Fixed::toInt(void) const
 float Fixed::toFloat(void) const
 {
 	return ((float)this->value / (float)(1 << this->fractionalBits));
+}
+
+float Fixed::round_float(float n)
+{
+	return (n >= 0) ? std::floor(n + 0.5) : std::ceil(n - 0.5);
 }
 
 Fixed::~Fixed()

@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 00:34:29 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 00:23:43 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 00:31:11 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@ class Fixed
 		Fixed(float const n);
 		Fixed(Fixed const &f);
 
-		Fixed& operator=(Fixed const &f) throw();
+		Fixed&	operator=(Fixed const &f) throw();
 
-		int getRawBits(void) const;
-		void setRawBits(int const r);
+		int		getRawBits(void) const;
+		void	setRawBits(int const r);
 
-		float toFloat(void) const;
-		int toInt(void) const;
+		float	toFloat(void) const;
+		int		toInt(void) const;
+
+		float	round_float(float n);
 
 		~Fixed();
 
