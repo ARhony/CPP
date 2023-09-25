@@ -6,12 +6,13 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 16:48:34 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/21 12:03:55 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/25 19:34:09 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <sstream>
 
 PhoneBook::PhoneBook() : iSizeCurrent(0), iSizeMax(8) {}
 
@@ -89,19 +90,22 @@ bool	is_search_index_valid(std::string search)
 
 void	PhoneBook::search()
 {
-	std::string	index_search = "-1";
-	int			index = 0;
-	int			index_max;
+	std::string			index_search = "-1";
+	std::stringstream	ss;
+	int					index = 0;
+	int					index_max;
 
 	if (this->iSizeCurrent > 0)
 	{
 		std::cout << "     Index|     First|      Last|      Nick" << std::endl;
 		while (index < this->iSizeCurrent)
 		{
-			std::cout << format(std::to_string(this->contacts[index].getIndex())) << "|";
+			ss << this->contacts[index].getIndex();
+			std::cout << format(ss.str()) << "|";
 			std::cout << format(this->contacts[index].getFirstName()) << "|";
 			std::cout << format(this->contacts[index].getLastName()) << "|";
 			std::cout << format(this->contacts[index].getNickName()) << std::endl;
+			ss.str("");
 			index++;
 			if (index > this->iSizeMax - 1)
 				break ;

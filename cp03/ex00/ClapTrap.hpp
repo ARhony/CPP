@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 00:34:29 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 00:23:43 by aramon           ###   ########.fr       */
+/*   Created: 2023/09/25 20:50:43 by aramon            #+#    #+#             */
+/*   Updated: 2023/09/25 22:33:00 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
 #include <iostream>
 
-class Fixed
+class ClapTrap
 {
-	private:
+	private :
 
-		int value;
-		static const int fractionalBits = 8;
+		std::string		name;
+		int				health = 10;
+		int				energy = 10;
+		int				damage = 0;
 
-	public:
+	public :
 
-		Fixed();
-		Fixed(int const n);
-		Fixed(float const n);
-		Fixed(Fixed const &f);
+		ClapTrap();
+		ClapTrap(const std::string& name);
 
-		Fixed& operator=(Fixed const &f) throw();
+		void		attack(const std::string &target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
 
-		int getRawBits(void) const;
-		void setRawBits(int const r);
-
-		float toFloat(void) const;
-		int toInt(void) const;
-
-		~Fixed();
+		~ClapTrap();
 
 };
-
-std::ostream& operator << (std::ostream &out, Fixed const &fixed);

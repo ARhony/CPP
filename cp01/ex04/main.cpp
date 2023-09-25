@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:28:02 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/22 20:56:53 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/25 22:21:14 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		main(int argc, char **argv)
 		return (err("Couldn't open input file\n"));
 
 	output_name = (std::string)argv[1] + ".replace";
-	std::ofstream	output(output_name);
+	std::ofstream	output(output_name.c_str());
 	if (!output)
 		return (err("Couldn't open output file\n"));
 
