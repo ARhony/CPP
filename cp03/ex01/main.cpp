@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:34:20 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 17:33:44 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 18:57:47 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int main( void )
     st2.beRepaired( 10 );
     st2.guardGate();
 
-    return EXIT_SUCCESS;
+    return (0);
 }

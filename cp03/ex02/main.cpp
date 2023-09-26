@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:34:20 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 18:43:09 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 18:57:39 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int main( void )
     ash.beRepaired( 10 );
     ash.highFivesGuys();
 
-    return EXIT_SUCCESS;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 20:51:05 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 14:13:01 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 18:57:55 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int main()
 	clap2.takeDamage(5);
 	clap2.beRepaired(3);
 
-	return 0;
+	return (0);
 }
