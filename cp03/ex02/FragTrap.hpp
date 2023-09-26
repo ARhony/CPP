@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 20:51:05 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 14:13:01 by aramon           ###   ########.fr       */
+/*   Created: 2023/09/26 17:34:46 by aramon            #+#    #+#             */
+/*   Updated: 2023/09/26 18:11:41 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main()
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap clap1("CLTP1");
-	ClapTrap clap2("CLTP2");
+	private :
 
-	clap1.attack("CLTP2");
-	clap2.takeDamage(5);
-	clap2.beRepaired(3);
+		FragTrap();
 
-	return 0;
-}
+	public :
+
+		FragTrap(const std::string& name);
+		FragTrap(const FragTrap& frag);
+		FragTrap &operator = (const FragTrap& frag);
+
+		void	highFivesGuys(void);
+
+		~FragTrap();
+};
+
+#endif

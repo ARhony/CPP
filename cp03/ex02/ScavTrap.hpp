@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 20:51:05 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 14:13:01 by aramon           ###   ########.fr       */
+/*   Created: 2023/09/26 14:27:16 by aramon            #+#    #+#             */
+/*   Updated: 2023/09/26 18:46:56 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main()
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap clap1("CLTP1");
-	ClapTrap clap2("CLTP2");
+	private :
 
-	clap1.attack("CLTP2");
-	clap2.takeDamage(5);
-	clap2.beRepaired(3);
+		ScavTrap();
 
-	return 0;
-}
+	public :
+
+		ScavTrap(const std::string& name);
+		ScavTrap(const ScavTrap &scavtrap);
+		ScavTrap &operator = (const ScavTrap &scavtrap);
+
+		void	guardGate();
+
+		~ScavTrap();
+};
+
+#endif

@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 20:51:05 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 14:13:01 by aramon           ###   ########.fr       */
+/*   Created: 2023/09/26 16:34:20 by aramon            #+#    #+#             */
+/*   Updated: 2023/09/26 18:43:09 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-int main()
+int main( void )
 {
-	ClapTrap clap1("CLTP1");
-	ClapTrap clap2("CLTP2");
+    FragTrap ash( "Ash" );
+    FragTrap ash2( ash );
 
-	clap1.attack("CLTP2");
-	clap2.takeDamage(5);
-	clap2.beRepaired(3);
+    ash.attack( "the air" );
+    ash.takeDamage( 10 );
+    ash.beRepaired( 10 );
+    ash.highFivesGuys();
 
-	return 0;
+    return EXIT_SUCCESS;
 }

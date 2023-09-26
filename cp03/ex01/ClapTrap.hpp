@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 20:50:43 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/26 18:50:36 by aramon           ###   ########.fr       */
+/*   Updated: 2023/09/26 18:32:39 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-	private :
+	protected :
 
 		std::string		name;
 		int				health;
