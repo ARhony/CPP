@@ -6,7 +6,7 @@
 /*   By: aramon <aramon@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 13:48:01 by aramon            #+#    #+#             */
-/*   Updated: 2023/09/29 20:21:43 by aramon           ###   ########.fr       */
+/*   Updated: 2023/10/03 14:52:31 by aramon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog(const std::string &n) : Animal("Dog")
 	this->_type = n;
 }
 
-Dog::Dog(const Dog &d)
+Dog::Dog(const Dog &d) : Animal(d)
 {
 	_type = d._type;
 	if (_type.empty())
